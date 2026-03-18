@@ -19,8 +19,8 @@ var PROJECTS = [
     name: "Cache-DiT",
     repo: "vipshop/cache-dit",
     url:  "https://github.com/vipshop/cache-dit",
-    desc: "A PyTorch-native Inference Engine with Hybrid Cache Acceleration and Parallelism for Diffusion Transformers.",
-    tags: ["PyTorch", "DiT"],
+    desc: "A PyTorch-native inference engine with hybrid cache acceleration and massive parallelism for Diffusion Transformers.",
+    tags: ["DiT", "Cache", "Parallelism"],
     cat:  "dit",
     date: "2025/07"
   },
@@ -29,7 +29,7 @@ var PROJECTS = [
     repo: "vipshop/cache-dit",
     url:  "https://github.com/vipshop/cache-dit",
     desc: "Dual Block Caching for DiTs. Customisable compute-block configs enable a balanced trade-off between performance and precision.",
-    tags: ["PyTorch", "Caching"],
+    tags: ["DiT", "Cache", "Parallelism"],
     cat:  "dit",
     date: "2025/07"
   },
@@ -38,7 +38,7 @@ var PROJECTS = [
     repo: "vipshop/cache-dit",
     url:  "https://github.com/vipshop/cache-dit",
     desc: "Dynamic Block Prune algorithm based on Residual Caching for Diffusion Transformers.",
-    tags: ["PyTorch", "Pruning"],
+    tags: ["DiT", "Cache", "Parallelism"],
     cat:  "dit",
     date: "2025/07"
   },
@@ -47,7 +47,7 @@ var PROJECTS = [
     repo: "vipshop/cache-dit",
     url:  "https://github.com/vipshop/cache-dit",
     desc: "Steps Computation Mask with Dynamic Caching (DBCache) for Diffusion Transformers.",
-    tags: ["PyTorch", "DiT"],
+    tags: ["DiT", "Cache", "Parallelism"],
     cat:  "dit",
     date: "2025/11"
   },
@@ -56,7 +56,7 @@ var PROJECTS = [
     repo: "vipshop/cache-dit",
     url:  "https://github.com/vipshop/cache-dit",
     desc: "A Ulysses Attention variant that supports arbitrary sequence lengths and arbitrary numbers of attention heads.",
-    tags: ["PyTorch", "Attention"],
+    tags: ["DiT", "Cache", "Parallelism", "Attention"],
     cat:  "dit",
     date: "2025/11"
   },
@@ -67,7 +67,7 @@ var PROJECTS = [
     repo: "xlite-dev/LeetCUDA",
     url:  "https://github.com/xlite-dev/LeetCUDA",
     desc: "Modern CUDA learning notes with PyTorch for beginners. 200+ CUDA kernels covering Tensor Cores, HGEMM, FlashAttention-2 MMA, and more.",
-    tags: ["CUDA", "C++"],
+    tags: ["PyTorch", "CUDA", "C++"],
     cat:  "cuda",
     date: "2023/12"
   },
@@ -96,7 +96,7 @@ var PROJECTS = [
     repo: "xlite-dev/lite.ai.toolkit",
     url:  "https://github.com/xlite-dev/lite.ai.toolkit",
     desc: "A lite C++ AI toolkit with 100+ models (Det, Seg, SD, Face-Fusion, etc.) using MNN, ONNXRuntime, and TensorRT.",
-    tags: ["C++", "ONNXRuntime"],
+    tags: ["C++", "ONNXRuntime", "MNN", "TensorRT"],
     cat:  "toolkit",
     date: "2022/01"
   },
@@ -200,13 +200,17 @@ function renderProjects() {
       return '<span class="tag">' + t + '</span>';
     }).join("");
 
+    var starsHtml = p.repo
+      ? '<a href="' + p.url + '" target="_blank" rel="noopener" tabindex="-1">' +
+          '<img class="stars-badge" src="' + starsBadge(p.repo) + '" alt="' + p.repo + ' stars" />' +
+        '</a>'
+      : '<span class="stars-na">N/A</span>';
+
     html +=
       '<div class="project-card" data-cat="' + p.cat + '">' +
         '<div class="project-top">' +
           '<h3><a href="' + p.url + '" target="_blank" rel="noopener">' + p.name + '</a></h3>' +
-          '<a href="' + p.url + '" target="_blank" rel="noopener" tabindex="-1">' +
-            '<img class="stars-badge" src="' + starsBadge(p.repo) + '" alt="' + p.repo + ' stars" />' +
-          '</a>' +
+          starsHtml +
         '</div>' +
         '<p>' + p.desc + '</p>' +
         '<div class="project-bottom">' +

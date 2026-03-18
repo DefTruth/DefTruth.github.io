@@ -121,6 +121,7 @@ nav {
 .project-top h3 { font-size: .92rem; font-weight: 600; line-height: 1.35; }
 .project-top h3 a { color: var(--accent); }
 .stars-badge { height: 18px; flex-shrink: 0; }
+.stars-na    { font-size: .72rem; color: var(--muted); flex-shrink: 0; }
 
 .project-card > p { color: var(--muted); font-size: .86rem; flex: 1; }
 
