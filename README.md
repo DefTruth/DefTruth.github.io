@@ -1,6 +1,6 @@
 # DefTruth.github.io
 
-Personal GitHub Pages site for [DefTruth](https://github.com/DefTruth) — AI Inference Engineer & Open-Source Developer.
+Personal GitHub Pages site for [DefTruth](https://github.com/DefTruth) — AI Infra Engineer & Open-Source Developer.
 
 🌐 **Live site:** https://deftruth.github.io
 
