@@ -11,6 +11,7 @@
   --border:       #30363d;
   --accent:       #58a6ff;
   --accent-2:     #3fb950;
+  --accent-hot:   #f78166;
   --text:         #c9d1d9;
   --text-muted:   #8b949e;
   --text-heading: #f0f6fc;
@@ -35,7 +36,7 @@ img { max-width: 100%; display: block; }
 
 /* ----- Layout helpers ---------------------------------- */
 .container {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -58,7 +59,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 14px 24px;
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -69,7 +70,7 @@ nav {
   letter-spacing: 0.5px;
 }
 
-.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links { display: flex; gap: 24px; list-style: none; }
 .nav-links a { color: var(--text-muted); font-size: 0.9rem; }
 .nav-links a:hover { color: var(--text-heading); }
 
@@ -98,9 +99,51 @@ nav {
 
 .hero-tagline {
   margin: 12px auto 0;
-  max-width: 560px;
+  max-width: 600px;
   color: var(--text-muted);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+}
+
+/* Hero stats bar */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 36px auto 0;
+  max-width: 480px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.hero-stat {
+  flex: 1;
+  padding: 16px 8px;
+  text-align: center;
+}
+
+.hero-stat-divider {
+  width: 1px;
+  height: 48px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.2;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 3px;
 }
 
 .hero-badges {
@@ -117,7 +160,7 @@ nav {
   display: flex;
   justify-content: center;
   gap: 14px;
-  margin-top: 36px;
+  margin-top: 32px;
   flex-wrap: wrap;
 }
 
@@ -215,6 +258,32 @@ nav {
   color: var(--accent-2);
 }
 
+/* ----- Filter bar -------------------------------------- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.filter-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: rgba(88, 166, 255, 0.12);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 /* ----- Projects ---------------------------------------- */
 .projects-grid {
   display: grid;
@@ -223,47 +292,132 @@ nav {
 }
 
 .project-card {
-  background: var(--bg);
+  background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 24px;
+  padding: 20px 22px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
   transition: border-color var(--transition), transform var(--transition);
 }
 .project-card:hover { border-color: var(--accent); transform: translateY(-3px); }
 
-.project-card h3 {
-  color: var(--accent);
-  font-size: 1rem;
-  margin-bottom: 8px;
+/* hidden state for filtering */
+.project-card[hidden] { display: none; }
+
+.project-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
 }
 
-.project-card p {
+.project-header h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.project-header h3 a { color: var(--accent); }
+.project-header h3 a:hover { color: #79c0ff; }
+
+/* Badges */
+.badge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 9px;
+  white-space: nowrap;
+}
+
+.badge-hot {
+  background: rgba(247, 129, 102, 0.15);
+  border: 1px solid rgba(247, 129, 102, 0.35);
+  color: var(--accent-hot);
+}
+
+.badge-stars {
+  background: rgba(210, 153, 34, 0.12);
+  border: 1px solid rgba(210, 153, 34, 0.3);
+  color: #e3b341;
+}
+
+.project-card > p {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   flex: 1;
-  margin-bottom: 16px;
+  line-height: 1.55;
 }
 
-.project-meta {
+.project-footer {
   display: flex;
   align-items: center;
-  gap: 14px;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.project-date {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* ----- Publications ------------------------------------ */
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pub-card {
+  display: flex;
+  gap: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  transition: border-color var(--transition);
+}
+
+.pub-card:hover { border-color: var(--accent); }
+
+.pub-badge {
+  flex-shrink: 0;
+  align-self: flex-start;
+  background: rgba(63, 185, 80, 0.12);
+  border: 1px solid rgba(63, 185, 80, 0.3);
+  color: var(--accent-2);
+  border-radius: var(--radius);
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.pub-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  line-height: 1.45;
+  margin-bottom: 6px;
+}
+
+.pub-venue {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  margin-bottom: 4px;
+}
+
+.pub-status {
   font-size: 0.82rem;
   color: var(--text-muted);
 }
-
-.project-meta .lang::before {
-  content: "●";
-  margin-right: 4px;
-}
-
-.lang-cpp { color: #f34b7d; }
-.lang-python { color: #3572a5; }
-.lang-cuda { color: #76b900; }
-
-.project-stars { display: flex; align-items: center; gap: 4px; }
 
 /* ----- Contact ----------------------------------------- */
 #contact { text-align: center; }
@@ -316,6 +470,10 @@ footer {
 /* ----- Responsive -------------------------------------- */
 @media (max-width: 640px) {
   #about .about-grid { grid-template-columns: 1fr; }
-  .nav-links { gap: 16px; }
+  .nav-links { gap: 14px; }
+  .nav-links li:nth-child(n+4) { display: none; }
   .projects-grid { grid-template-columns: 1fr; }
+  .hero-stats { max-width: 100%; }
+  .pub-card { flex-direction: column; gap: 10px; }
+  .pub-badge { align-self: flex-start; }
 }

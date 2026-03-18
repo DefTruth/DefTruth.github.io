@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DefTruth – AI Inference Engineer &amp; Open-Source Developer specialising in computer vision, CUDA, and high-performance C++ inference toolkits." />
+  <meta name="description" content="DefTruth – AI Inference Engineer &amp; Open-Source Developer. Creator of LeetCUDA, Cache-DiT, Awesome-LLM-Inference, lite.ai.toolkit and more." />
   <title>DefTruth | AI Inference Engineer</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- Favicon: GitHub avatar -->
   <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/31974251?v=4" />
 </head>
 <body>
@@ -18,7 +17,8 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#projects">Works</a></li>
+      <li><a href="#publications">Papers</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -34,9 +34,27 @@
     />
     <h1 class="hero-name">DefTruth</h1>
     <p class="hero-tagline">
-      AI Inference Engineer &amp; Open-Source Developer · Building high-performance
-      computer-vision toolkits with C++, CUDA, and ONNXRuntime.
+      AI Inference Engineer &amp; Open-Source Developer ·
+      DiT / LLM Inference · CUDA Kernels · High-Performance C++ Toolkits
     </p>
+
+    <!-- Stats bar -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="stat-number">20k+</span>
+        <span class="stat-label">GitHub Stars</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="stat-number">14+</span>
+        <span class="stat-label">Open-Source Projects</span>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <span class="stat-number">2</span>
+        <span class="stat-label">SCI Publications</span>
+      </div>
+    </div>
 
     <div class="hero-badges">
       <a href="https://github.com/xlite-dev" target="_blank" rel="noopener">
@@ -52,7 +70,6 @@
 
     <div class="hero-cta">
       <a class="btn btn-primary" href="https://github.com/DefTruth" target="_blank" rel="noopener">
-        <!-- GitHub icon -->
         <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true">
           <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
           0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13
@@ -66,7 +83,6 @@
         GitHub
       </a>
       <a class="btn btn-outline" href="https://www.zhihu.com/people/qyjdef" target="_blank" rel="noopener">
-        <!-- Article icon -->
         <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true">
           <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v11a1.5 1.5 0
           0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5v-11zm3 1a.5.5 0 0 0 0 1h8a.5.5 0 0 0
@@ -75,16 +91,13 @@
         </svg>
         知乎 Blog
       </a>
-      <a class="btn btn-outline" href="#contact">
-        <!-- Mail icon -->
+      <a class="btn btn-outline" href="#projects">
         <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true">
-          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0
-          1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13
-          2.383-4.708 2.825L15 11.105V5.383zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795
-          -5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741zM1 11.105l4.708-2.897L1
-          5.383v5.722z"/>
+          <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8
+          13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723
+          -2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
         </svg>
-        Contact
+        View Works
       </a>
     </div>
   </div>
@@ -98,33 +111,38 @@
       <div>
         <p>
           Hi! I'm <strong>DefTruth</strong>, an AI inference engineer and open-source
-          enthusiast passionate about deploying deep-learning models at scale.
+          developer focused on making large-scale AI models run faster and cheaper.
         </p>
         <p>
-          My main focus is on <strong>high-performance C++ inference toolkits</strong>
-          for computer vision — covering tasks like object detection, face
-          reconstruction, image matting, super-resolution, and more.
+          My recent work centres on <strong>Diffusion Transformer (DiT) inference acceleration</strong> —
+          I built <a href="https://github.com/vipshop/cache-dit" target="_blank" rel="noopener">Cache-DiT</a>,
+          a PyTorch-native inference engine with hybrid caching strategies (DBCache, DBPrune, SCM)
+          and distributed attention (UAA), achieving significant speedups on production DiT workloads.
         </p>
         <p>
-          I enjoy diving deep into hardware-level optimisations, from
-          <strong>CUDA PTX assembly</strong> to <strong>ARM SVE/SVE2</strong> SIMD
-          intrinsics, making models run faster on every platform.
+          I'm also deeply invested in <strong>CUDA kernel engineering</strong>: writing HGEMM,
+          FlashAttention variants, and 200+ GPU kernels from scratch using Tensor Cores,
+          MMA, and CuTe, documented in the
+          <a href="https://github.com/xlite-dev/LeetCUDA" target="_blank" rel="noopener">LeetCUDA</a> (9.9k ⭐) project.
         </p>
       </div>
       <div>
         <p>
-          Beyond inference engineering, I write technical articles on
-          <a href="https://www.zhihu.com/people/qyjdef" target="_blank" rel="noopener">知乎</a>
-          about CUDA, ONNX, and computer-vision algorithms — sharing what I learn
-          with the Chinese ML community.
+          Earlier I built <a href="https://github.com/xlite-dev/lite.ai.toolkit" target="_blank" rel="noopener">lite.ai.toolkit</a>
+          (4.4k ⭐), a production C++ inference toolkit for 100+ vision models using ONNXRuntime, MNN,
+          and TensorRT — and contributed to PaddlePaddle's
+          <a href="https://github.com/PaddlePaddle/FastDeploy" target="_blank" rel="noopener">FastDeploy</a> (3.7k ⭐)
+          covering 160+ text and vision models.
         </p>
         <p>
-          I maintain the <a href="https://github.com/xlite-dev" target="_blank" rel="noopener">xlite-dev</a>
-          organisation on GitHub, home to lightweight and production-ready AI
-          inference libraries.
+          I curate high-quality reading lists:
+          <a href="https://github.com/xlite-dev/Awesome-LLM-Inference" target="_blank" rel="noopener">Awesome-LLM-Inference</a> (5k ⭐)
+          and <a href="https://github.com/xlite-dev/Awesome-DiT-Inference" target="_blank" rel="noopener">Awesome-DiT-Inference</a> (500+ ⭐).
         </p>
         <p>
-          Ranked among top open-source developers on
+          I maintain the <a href="https://github.com/xlite-dev" target="_blank" rel="noopener">xlite-dev</a> organisation,
+          write on <a href="https://www.zhihu.com/people/qyjdef" target="_blank" rel="noopener">知乎</a>, and am ranked
+          among top open-source developers on
           <a href="https://trendshift.io/developers/644" target="_blank" rel="noopener">Trendshift</a>.
         </p>
       </div>
@@ -149,42 +167,32 @@
       </div>
 
       <div class="skill-card">
+        <h3>DiT / LLM Inference</h3>
+        <div class="skill-tags">
+          <span class="tag tag-green">Cache-DiT</span>
+          <span class="tag tag-green">DBCache</span>
+          <span class="tag tag-green">vLLM</span>
+          <span class="tag tag-green">DistriFusion</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>CUDA &amp; Kernels</h3>
+        <div class="skill-tags">
+          <span class="tag">Tensor Cores</span>
+          <span class="tag">MMA / CuTe</span>
+          <span class="tag">FlashAttention</span>
+          <span class="tag">HGEMM</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
         <h3>Inference Frameworks</h3>
         <div class="skill-tags">
           <span class="tag tag-green">ONNXRuntime</span>
-          <span class="tag tag-green">MNN</span>
           <span class="tag tag-green">TensorRT</span>
+          <span class="tag tag-green">MNN</span>
           <span class="tag tag-green">OpenVINO</span>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <h3>Computer Vision</h3>
-        <div class="skill-tags">
-          <span class="tag">Object Detection</span>
-          <span class="tag">Face Recon</span>
-          <span class="tag">Matting</span>
-          <span class="tag">Super-Resolution</span>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <h3>Hardware / Low-level</h3>
-        <div class="skill-tags">
-          <span class="tag tag-green">CUDA / PTX</span>
-          <span class="tag tag-green">ARM SVE/SVE2</span>
-          <span class="tag tag-green">SIMD</span>
-          <span class="tag tag-green">Vulkan</span>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <h3>Build &amp; DevOps</h3>
-        <div class="skill-tags">
-          <span class="tag">CMake</span>
-          <span class="tag">Docker</span>
-          <span class="tag">GitHub Actions</span>
-          <span class="tag">Android NDK</span>
         </div>
       </div>
 
@@ -192,9 +200,19 @@
         <h3>ML / DL</h3>
         <div class="skill-tags">
           <span class="tag">PyTorch</span>
+          <span class="tag">Diffusion Models</span>
           <span class="tag">ONNX</span>
-          <span class="tag">Keras</span>
           <span class="tag">OpenCV</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <h3>Hardware / Low-level</h3>
+        <div class="skill-tags">
+          <span class="tag tag-green">PTX / ISA</span>
+          <span class="tag tag-green">ARM SVE/SVE2</span>
+          <span class="tag tag-green">SIMD</span>
+          <span class="tag tag-green">Vulkan</span>
         </div>
       </div>
 
@@ -205,74 +223,230 @@
 <!-- ===================== PROJECTS ====================== -->
 <section id="projects">
   <div class="container">
-    <h2 class="section-title">Featured Projects</h2>
-    <div class="projects-grid">
+    <h2 class="section-title">Featured Works</h2>
 
-      <div class="project-card">
-        <h3><a href="https://github.com/DefTruth/lite.ai.toolkit.demo" target="_blank" rel="noopener">lite.ai.toolkit.demo</a></h3>
-        <p>Demos for the Lite.AI.ToolKit shared libraries — a comprehensive C++ AI inference toolkit covering 100+ vision models.</p>
-        <div class="project-meta">
-          <span class="lang lang-cpp">C++</span>
-          <span class="project-stars">
-            <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25z"/></svg>
-            8
-          </span>
+    <!-- Category filter -->
+    <div class="filter-bar" role="tablist" aria-label="Filter projects by category">
+      <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="filter-btn" data-filter="dit" role="tab" aria-selected="false">DiT &amp; Inference</button>
+      <button class="filter-btn" data-filter="cuda" role="tab" aria-selected="false">CUDA &amp; Kernels</button>
+      <button class="filter-btn" data-filter="toolkit" role="tab" aria-selected="false">AI Toolkits</button>
+      <button class="filter-btn" data-filter="research" role="tab" aria-selected="false">Research Lists</button>
+    </div>
+
+    <div class="projects-grid" id="projects-grid">
+
+      <!-- ---- DiT & Inference ---- -->
+      <div class="project-card" data-cat="dit">
+        <div class="project-header">
+          <h3><a href="https://github.com/vipshop/cache-dit" target="_blank" rel="noopener">Cache-DiT</a></h3>
+          <span class="badge badge-hot">🔥 1.1k+</span>
+        </div>
+        <p>A PyTorch-native Inference Engine with Hybrid Cache Acceleration and Parallelism for Diffusion Transformers. Supports multi-GPU with sequence parallelism.</p>
+        <div class="project-footer">
+          <span class="tag tag-green">PyTorch</span>
+          <span class="tag">DiT</span>
+          <span class="project-date">2025/07</span>
         </div>
       </div>
 
-      <div class="project-card">
-        <h3><a href="https://github.com/DefTruth/PTX-ISA-8.2-zh" target="_blank" rel="noopener">PTX-ISA-8.2-zh</a></h3>
-        <p>CUDA 12.2 PTX ISA study notes with Chinese translations, personal insights, and inline assembly examples.</p>
-        <div class="project-meta">
-          <span class="lang lang-cuda">CUDA</span>
-          <span class="project-stars">
-            <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25z"/></svg>
-            3
-          </span>
+      <div class="project-card" data-cat="dit">
+        <div class="project-header">
+          <h3><a href="https://github.com/vipshop/cache-dit" target="_blank" rel="noopener">DBCache</a></h3>
+        </div>
+        <p>Dual Block Caching for Diffusion Transformers. Customisable compute-block configurations enabling a balanced trade-off between performance and precision.</p>
+        <div class="project-footer">
+          <span class="tag tag-green">PyTorch</span>
+          <span class="tag">Caching</span>
+          <span class="project-date">2025/07</span>
         </div>
       </div>
 
-      <div class="project-card">
-        <h3><a href="https://github.com/DefTruth/ARMv9-ACLE-SVE2-zh" target="_blank" rel="noopener">ARMv9-ACLE-SVE2-zh</a></h3>
-        <p>Chinese translation of ARMv9 SVE/SVE2 ACLE intrinsics with personal annotations and usage examples.</p>
-        <div class="project-meta">
-          <span class="lang lang-cpp">C++</span>
-          <span class="project-stars">
-            <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25z"/></svg>
-            1
-          </span>
+      <div class="project-card" data-cat="dit">
+        <div class="project-header">
+          <h3><a href="https://github.com/vipshop/cache-dit" target="_blank" rel="noopener">DBPrune</a></h3>
+        </div>
+        <p>Dynamic Block Prune algorithm based on Residual Caching for Diffusion Transformers — reduces redundant computation across denoising steps.</p>
+        <div class="project-footer">
+          <span class="tag tag-green">PyTorch</span>
+          <span class="tag">Pruning</span>
+          <span class="project-date">2025/07</span>
         </div>
       </div>
 
-      <div class="project-card">
-        <h3><a href="https://github.com/DefTruth/mattematte" target="_blank" rel="noopener">mattematte</a></h3>
-        <p>C++ toolkit for matting, segmentation, super-resolution and colorisation using MNN, ONNXRuntime and Vulkan.</p>
-        <div class="project-meta">
-          <span class="lang lang-cpp">C++</span>
-          <span class="project-stars">
-            <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25z"/></svg>
-            1
-          </span>
+      <div class="project-card" data-cat="dit">
+        <div class="project-header">
+          <h3><a href="https://github.com/vipshop/cache-dit" target="_blank" rel="noopener">SCM</a></h3>
+        </div>
+        <p>Steps Computation Mask with Dynamic Caching (DBCache) for Diffusion Transformers — fine-grained control over which steps reuse cached activations.</p>
+        <div class="project-footer">
+          <span class="tag tag-green">PyTorch</span>
+          <span class="tag">DiT</span>
+          <span class="project-date">2025/11</span>
         </div>
       </div>
 
-      <div class="project-card">
-        <h3><a href="https://github.com/DefTruth/nms.lite.ai.toolkit" target="_blank" rel="noopener">nms.lite.ai.toolkit</a></h3>
-        <p>Lightweight C++ implementation of hard NMS, soft NMS, and blend NMS — a building block for detection pipelines.</p>
-        <div class="project-meta">
-          <span class="lang lang-cpp">C++</span>
-          <span class="project-stars">
-            <svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25z"/></svg>
-            3
-          </span>
+      <div class="project-card" data-cat="dit">
+        <div class="project-header">
+          <h3><a href="https://github.com/vipshop/cache-dit" target="_blank" rel="noopener">UAA — Ulysses Anything Attention</a></h3>
+        </div>
+        <p>A Ulysses Attention variant that supports arbitrary sequence lengths and arbitrary numbers of attention heads for distributed DiT inference.</p>
+        <div class="project-footer">
+          <span class="tag tag-green">PyTorch</span>
+          <span class="tag">Attention</span>
+          <span class="project-date">2025/11</span>
         </div>
       </div>
 
-      <div class="project-card">
-        <h3><a href="https://github.com/DefTruth/awesome-3d-face-reconstruction" target="_blank" rel="noopener">awesome-3d-face-reconstruction</a></h3>
-        <p>Curated reading list of papers and resources on 3D face reconstruction methods and datasets.</p>
-        <div class="project-meta">
-          <span class="lang lang-python">Research</span>
+      <!-- ---- CUDA & Kernels ---- -->
+      <div class="project-card" data-cat="cuda">
+        <div class="project-header">
+          <h3><a href="https://github.com/xlite-dev/LeetCUDA" target="_blank" rel="noopener">LeetCUDA</a></h3>
+          <span class="badge badge-hot">🔥 9.9k+</span>
+        </div>
+        <p>Modern CUDA learning notes with PyTorch for beginners. 200+ CUDA kernels covering Tensor Cores, HGEMM, FlashAttention-2 MMA, and more.</p>
+        <div class="project-footer">
+          <span class="tag">CUDA</span>
+          <span class="tag">C++</span>
+          <span class="project-date">2023/12</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-cat="cuda">
+        <div class="project-header">
+          <h3><a href="https://github.com/xlite-dev/ffpa-attn" target="_blank" rel="noopener">FFPA — Split-D FlashAttention</a></h3>
+          <span class="badge badge-stars">250+</span>
+        </div>
+        <p>Extends FlashAttention-2 with Split-D tiling for ~O(1) SRAM complexity at large head dimensions. Achieves 1.8×–3× speedup over SDPA EA.</p>
+        <div class="project-footer">
+          <span class="tag">CUDA</span>
+          <span class="tag">FlashAttention</span>
+          <span class="project-date">2024/10</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-cat="cuda">
+        <div class="project-header">
+          <h3><a href="https://github.com/xlite-dev/HGEMM" target="_blank" rel="noopener">HGEMM</a></h3>
+          <span class="badge badge-stars">140+</span>
+        </div>
+        <p>Write HGEMM from scratch using Tensor Cores with WMMA, MMA, and CuTe APIs to reach peak performance on NVIDIA GPUs.</p>
+        <div class="project-footer">
+          <span class="tag">CUDA</span>
+          <span class="tag">Tensor Cores</span>
+          <span class="project-date">2024/03</span>
+        </div>
+      </div>
+
+      <!-- ---- AI Toolkits ---- -->
+      <div class="project-card" data-cat="toolkit">
+        <div class="project-header">
+          <h3><a href="https://github.com/xlite-dev/lite.ai.toolkit" target="_blank" rel="noopener">lite.ai.toolkit</a></h3>
+          <span class="badge badge-hot">🔥 4.4k+</span>
+        </div>
+        <p>A lite C++ AI toolkit featuring 100+ vision models (detection, segmentation, stable diffusion, face fusion, etc.) with MNN, ONNXRuntime, and TensorRT backends.</p>
+        <div class="project-footer">
+          <span class="tag">C++</span>
+          <span class="tag">ONNXRuntime</span>
+          <span class="project-date">2022/01</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-cat="toolkit">
+        <div class="project-header">
+          <h3><a href="https://github.com/PaddlePaddle/FastDeploy" target="_blank" rel="noopener">FastDeploy v1.0</a></h3>
+          <span class="badge badge-hot">🔥 3.7k+</span>
+        </div>
+        <p>An easy-to-use, high-performance AI model deployment toolkit for Cloud, Mobile, and Edge. End-to-end optimisation for 160+ text and vision models.</p>
+        <div class="project-footer">
+          <span class="tag">C++</span>
+          <span class="tag">Python</span>
+          <span class="project-date">2022/12</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-cat="toolkit">
+        <div class="project-header">
+          <h3><a href="https://github.com/xlite-dev/torchlm" target="_blank" rel="noopener">torchlm</a></h3>
+          <span class="badge badge-stars">260+</span>
+        </div>
+        <p>An easy-to-use PyTorch library for face landmark detection: training, evaluation, inference, and rich data augmentations all in one package.</p>
+        <div class="project-footer">
+          <span class="tag tag-green">PyTorch</span>
+          <span class="tag">Computer Vision</span>
+          <span class="project-date">2022/03</span>
+        </div>
+      </div>
+
+      <!-- ---- Research Lists ---- -->
+      <div class="project-card" data-cat="research">
+        <div class="project-header">
+          <h3><a href="https://github.com/xlite-dev/Awesome-LLM-Inference" target="_blank" rel="noopener">Awesome-LLM-Inference</a></h3>
+          <span class="badge badge-hot">🔥 5k+</span>
+        </div>
+        <p>A curated list of awesome LLM/VLM inference papers with code — covering quantisation, speculation, paged attention, continuous batching, and more.</p>
+        <div class="project-footer">
+          <span class="tag tag-green">Research</span>
+          <span class="tag">LLM</span>
+          <span class="project-date">2023/12</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-cat="research">
+        <div class="project-header">
+          <h3><a href="https://github.com/xlite-dev/Awesome-DiT-Inference" target="_blank" rel="noopener">Awesome-DiT-Inference</a></h3>
+          <span class="badge badge-stars">500+</span>
+        </div>
+        <p>A curated list of awesome Diffusion Transformer inference papers with code — covering caching, distillation, parallelism, and quantisation techniques.</p>
+        <div class="project-footer">
+          <span class="tag tag-green">Research</span>
+          <span class="tag">DiT</span>
+          <span class="project-date">2024/12</span>
+        </div>
+      </div>
+
+      <div class="project-card" data-cat="research">
+        <div class="project-header">
+          <h3><a href="https://github.com/xlite-dev/lihang-notes" target="_blank" rel="noopener">lihang-notes</a></h3>
+          <span class="badge badge-stars">490+</span>
+        </div>
+        <p>Study notes for Li Hang's <em>Statistical Learning Methods</em> — a 200-page PDF with step-by-step manual formula derivations and complete R implementations.</p>
+        <div class="project-footer">
+          <span class="tag">R</span>
+          <span class="tag">Statistics</span>
+          <span class="project-date">2017/09</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PUBLICATIONS ================== -->
+<section id="publications">
+  <div class="container">
+    <h2 class="section-title">Publications</h2>
+    <div class="pub-list">
+
+      <div class="pub-card">
+        <div class="pub-badge">SCI</div>
+        <div class="pub-body">
+          <h3 class="pub-title">Quantitative strategy for the Chinese commodity futures market based on a dynamic weighted money flow model</h3>
+          <p class="pub-venue">
+            <em>Physica A: Statistical Mechanics and its Applications</em>
+          </p>
+          <p class="pub-status">Accepted &nbsp;·&nbsp; 2018/08</p>
+        </div>
+      </div>
+
+      <div class="pub-card">
+        <div class="pub-badge">SCI</div>
+        <div class="pub-body">
+          <h3 class="pub-title">Numerical characteristics and parameter estimation of finite mixed generalized normal distribution</h3>
+          <p class="pub-venue">
+            <em>Communications in Statistics — Simulation and Computation</em>
+          </p>
+          <p class="pub-status">Accepted &nbsp;·&nbsp; 2020/01</p>
         </div>
       </div>
 
@@ -284,9 +458,9 @@
 <section id="contact">
   <div class="container">
     <h2 class="section-title">Get In Touch</h2>
-    <p style="color:var(--text-muted); max-width:480px; margin: 0 auto;">
+    <p style="color:var(--text-muted); max-width:520px; margin: 0 auto;">
       Feel free to reach out via GitHub or connect on 知乎 for discussions
-      about AI inference, CUDA optimisation, or open-source collaboration.
+      about DiT / LLM inference, CUDA kernel engineering, or open-source collaboration.
     </p>
     <div class="contact-links">
 
