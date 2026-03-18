@@ -63,6 +63,7 @@ nav {
 .stat-n    { display: block; font-size: 1.4rem; font-weight: 700; color: var(--accent); }
 .stat-l    { display: block; font-size: .72rem; color: var(--muted); margin-top: 2px; }
 .stat-sep  { width: 1px; height: 44px; background: var(--border); flex-shrink: 0; }
+.stat-badge { display: block; margin: 0 auto 2px; height: 22px; }
 
 /* Badge / button rows */
 .badge-row { display: flex; flex-wrap: wrap; justify-content: center;
