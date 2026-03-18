@@ -15,13 +15,13 @@ A clean, dark-themed personal portfolio site built with vanilla HTML, CSS, and J
 ├── index.html          # Main landing page
 ├── assets/
 │   ├── css/style.css   # Stylesheet
-│   └── js/main.js      # Scroll animations & nav highlighting
+│   └── js/main.js      # Site data (PROJECTS, PUBLICATIONS) + rendering, filters & scroll-spy
 └── README.md
 ```
 
 ## Features
 
 - Responsive dark theme inspired by GitHub's design language
-- Sections: Hero · About · Skills · Projects · Contact
+- Sections: Hero · About · Featured Works (14 projects) · Publications · Contact
 - Smooth scroll-reveal animations via IntersectionObserver
 - No dependencies — pure HTML/CSS/JS
