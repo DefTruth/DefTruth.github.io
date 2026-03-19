@@ -144,6 +144,23 @@ nav {
 .pub-venue { color: var(--muted); font-size: .86rem; margin-bottom: 3px; }
 .pub-meta  { color: var(--muted); font-size: .8rem; }
 
+/* ---------- Certificates ----------------------------------- */
+#cert-list  { display: flex; flex-direction: column; gap: 16px; }
+.cert-card  { display: flex; gap: 20px; align-items: flex-start;
+              background: var(--bg-card); border: 1px solid var(--border);
+              border-radius: var(--radius); padding: 20px 25px;
+              transition: border-color var(--ease); }
+.cert-card:hover { border-color: var(--accent); }
+.cert-type  { flex-shrink: 0; align-self: flex-start;
+              background: rgba(88,166,255,.1); border: 1px solid rgba(88,166,255,.28);
+              color: var(--accent); border-radius: var(--radius);
+              padding: 3px 11px; font-size: .78rem; font-weight: 700; }
+.cert-title { font-size: .92rem; font-weight: 600; line-height: 1.45; margin-bottom: 5px; }
+.cert-title a { color: var(--heading); }
+.cert-title a:hover { color: var(--accent); }
+.cert-org   { color: var(--muted); font-size: .86rem; margin-bottom: 3px; }
+.cert-meta  { color: var(--muted); font-size: .8rem; }
+
 /* ---------- Contact ---------------------------------------- */
 .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
 .contact-link  { display: flex; align-items: center; gap: 8px;
@@ -173,5 +190,5 @@ footer { background: var(--bg); border-top: 1px solid var(--border);
   /* hide Works + Papers links on smallest screens, keep About + Contact */
   .nav-links li:nth-child(2),
   .nav-links li:nth-child(3) { display: none; }
-  .pub-card       { flex-direction: column; }
+  .pub-card, .cert-card { flex-direction: column; }
 }

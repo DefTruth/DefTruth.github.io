@@ -167,6 +167,20 @@ var PUBLICATIONS = [
   }
 ];
 
+/* ---------- CERTIFICATES ----------------------------------- *
+ * Fields: title, org, date, type (e.g. "Certificate"), url
+ * ------------------------------------------------------------- */
+var CERTIFICATES = [
+  {
+    title: "Diffusers Contributor Certificate",
+    org:   "Hugging Face / Diffusers",
+    date:  "2026/01",
+    type:  "Certificate",
+    url:   "https://github.com/DefTruth/DefTruth/blob/main/assets/certificate-20260115T113404-792b8f62.pdf"
+  }
+];
+
+
 /* ---------- FILTER CATEGORIES ------------------------------ *
  * label  : displayed on the filter button
  * value  : must match the "cat" field in PROJECTS (or "all")
@@ -277,6 +291,30 @@ function renderPublications() {
   list.innerHTML = html;
 }
 
+/* ---- Render certificates ---------------------------------- */
+function renderCertificates() {
+  var list = document.getElementById("cert-list");
+  if (!list) return;
+
+  var html = "";
+  CERTIFICATES.forEach(function (cert) {
+    html +=
+      '<div class="cert-card">' +
+        '<span class="cert-type">' + cert.type + '</span>' +
+        '<div class="cert-body">' +
+          '<p class="cert-title">' +
+            '<a href="' + cert.url + '" target="_blank" rel="noopener">' + cert.title + '</a>' +
+          '</p>' +
+          '<p class="cert-org"><em>' + cert.org + '</em></p>' +
+          '<p class="cert-meta">' + cert.date + ' &nbsp;·&nbsp; ' +
+            '<a href="' + cert.url + '" target="_blank" rel="noopener">View PDF ↗</a>' +
+          '</p>' +
+        '</div>' +
+      '</div>';
+  });
+  list.innerHTML = html;
+}
+
 /* ---- Scroll: highlight active nav link -------------------- */
 function initScrollSpy() {
   var sections = document.querySelectorAll("section[id]");
@@ -305,7 +343,7 @@ function initFadeIn() {
     });
   }, { threshold: 0.08 });
 
-  document.querySelectorAll(".project-card, .pub-card, .contact-link").forEach(function (el) {
+  document.querySelectorAll(".project-card, .pub-card, .cert-card, .contact-link").forEach(function (el) {
     el.classList.add("fade-in");
     obs.observe(el);
   });
@@ -322,6 +360,7 @@ document.addEventListener("DOMContentLoaded", function () {
   renderProjects();
   renderFilters();
   renderPublications();
+  renderCertificates();
   initScrollSpy();
   initFadeIn();
   setYear();
