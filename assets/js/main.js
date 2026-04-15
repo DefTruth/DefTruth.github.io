@@ -19,8 +19,8 @@ var PROJECTS = [
     name: "Cache-DiT",
     repo: "vipshop/cache-dit",
     url:  "https://github.com/vipshop/cache-dit",
-    desc: "A PyTorch-native inference engine with hybrid cache acceleration and massive parallelism for Diffusion Transformers.",
-    tags: ["DiT", "Cache", "Parallelism"],
+    desc: "A PyTorch-native Inference Engine with Cache, Parallelism and Quantization for Diffusion Transformers.",
+    tags: ["DiT", "Cache", "Parallelism", "Quantization"],
     cat:  "dit",
     date: "2025/07"
   },
